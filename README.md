@@ -1,6 +1,6 @@
-# ☕ NATIVE — Exclusive Coffee Roastery & Showroom
+# E-commerce Exclusive Products Roastery
 
-Plataforma de e-commerce e portal de atacado (*Wholesale*) de alta performance desenvolvida para a **NATIVE Coffee Company**. O projeto combina uma experiência de varejo (B2C) com design editorial de luxo e um portal B2B completo com precificação dinâmica, catálogo em lote, autenticação protegida por tokens HMAC e ferramentas analíticas internas.
+Plataforma de e-commerce e portal de atacado (*Wholesale*) de alta performance. O projeto combina uma experiência de varejo (B2C) com design editorial de luxo e um portal B2B completo com precificação dinâmica, catálogo em lote, autenticação protegida por tokens HMAC e ferramentas analíticas internas.
 
 ---
 
@@ -25,7 +25,7 @@ Plataforma de e-commerce e portal de atacado (*Wholesale*) de alta performance d
 
 ## 🌟 Visão Geral
 
-A **NATIVE** é uma torrefação exclusiva dedicada a microlotes raros e cafés de competição (*farm to cup*). O projeto foi desenhado sob uma arquitetura **Headless Commerce**, integrando:
+A Empresa é uma torrefação exclusiva dedicada a microlotes raros e cafés de competição (*farm to cup*). O projeto foi desenhado sob uma arquitetura **Headless Commerce**, integrando:
 
 1. **Frontend SPA Ultra-rápido:** Construído com React 18, TypeScript, Vite e Tailwind CSS, proporcionando transições fluidas e microinterações cinematográficas (GSAP).
 2. **Back-end Serverless (Supabase):** Mais de 20 Edge Functions em Deno/TypeScript gerenciando regras de negócio, autenticação B2B com HMAC/JWT, persistência de dados e middleware seguro com a API do Shopify.
@@ -172,7 +172,7 @@ lovably-crafted-pixels/
 
 ---
 
-## ⚡ Arquitetura Serverless (Supabase Edge Functions)
+##  Arquitetura Serverless (Supabase Edge Functions)
 
 As funções serverless executadas em ambiente **Deno** garantem segurança e isolamento de credenciais sensíveis:
 
@@ -196,7 +196,7 @@ O banco de dados armazena os estados que não pertencem ao catálogo público da
 
 ---
 
-## 🔑 Variáveis de Ambiente
+##  Variáveis de Ambiente
 
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
@@ -218,7 +218,7 @@ VITE_SHOPIFY_STOREFRONT_TOKEN="seu-token-publico-storefront"
 
 ---
 
-## 📦 Instalação e Execução Local
+##  Instalação e Execução Local
 
 ### Pré-requisitos
 - **Node.js** (versão 18+ recomendada) ou **Bun**
@@ -229,7 +229,7 @@ VITE_SHOPIFY_STOREFRONT_TOKEN="seu-token-publico-storefront"
 ```bash
 # Clone o repositório
 git clone <url-do-repositorio>
-cd lovably-crafted-pixels
+cd showroom-ecommerce
 
 # Instalar dependências via npm
 npm install
