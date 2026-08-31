@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NATIVE - Exclusive Coffee Roastery & Showroom</title>
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <meta name="description" content="Exclusive roastery and showroom featuring the greatest coffees in the world. Farm to cup like never before." />
+    <meta name="author" content="NATIVE" />
+
+    <meta property="og:title" content="cc373bb1-1923-48db-9e48-0758fea9724b" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+      Login-flow boot screen.
+
+      The login/signup/wholesale entry is assembled from several pieces that
+      each arrive on their own schedule: the ~270 kB (gzipped) bundle, two auth
+      round-trips, the background photo and the brand mark. Revealing each as
+      it lands is what made the page look like it was being built in front of
+      the visitor. So nothing is revealed until ALL of it is ready — this
+      screen covers the whole thing and lifts once, in one go.
+
+      It has to live here, in the HTML, rather than in a React component: it
+      must be on screen before the bundle that would render such a component
+      has even downloaded. It also preloads the photo, so the download runs in
+      PARALLEL with the bundle instead of waiting for React to discover it.
+      (Measured before this: the request started 2 ms AFTER the auth calls
+      finished, at 2409 ms. Everything up to then was a blank page.)
+
+      Both are gated on the pathname, so no other route pays for an image it
+      never shows. The app calls window.__nativeBootHide() when everything is
+      genuinely ready (see useLoginBootGate); the timeout is only a safety net
+      for the case where that call never comes.
+    -->
+    <style>
+      /* #131313 / #F8F5E4 mirror --wholesale-primary and --bg-cream, the same
+         pairing WholesaleLoadingScreen uses elsewhere in the portal. */
+      #native-boot {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2147483000;
+        align-items: center;
+        justify-content: center;
+        background: #131313;
+        transition: opacity 400ms ease;
+      }
+      /* Shown only on the login-flow routes, via the class the script below
+         sets synchronously — so no other page ever flashes this. */
+      .native-boot-active #native-boot { display: flex; }
+      #native-boot > div { display: flex; gap: 8px; }
+      #native-boot span {
+        width: 12px;
+        height: 12px;
+        border-radius: 9999px;
+        background: #f8f5e4;
+        display: block;
+        animation: nativeBootBounce 1s infinite;
+      }
+      #native-boot span:nth-child(2) { animation-delay: 0.15s; }
+      #native-boot span:nth-child(3) { animation-delay: 0.3s; }
+      @keyframes nativeBootBounce {
+        0%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-9px); }
+      }
+    </style>
+    <script>
+      (function () {
+        if (!/^\/(wholesale-copy|login|signup)(\/|$)/.test(location.pathname)) return;
+
+        // Set synchronously, before the parser reaches <body>, so the markup
+        // below is already visible the instant it is parsed. Building the
+        // element from JS instead meant waiting for DOMContentLoaded — measured
+        // at 142 ms of blank screen before the dots appeared.
+        document.documentElement.className += " native-boot-active";
+
+        var link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.href = "/login/samuel-running.webp";
+        // Browsers without WebP support skip this and fetch the <picture> JPG.
+        link.type = "image/webp";
+        link.setAttribute("fetchpriority", "high");
+        document.head.appendChild(link);
+
+        window.__nativeBootHide = function () {
+          var el = document.getElementById("native-boot");
+          if (!el) return;
+          el.style.opacity = "0";
+          el.style.pointerEvents = "none";
+          window.setTimeout(function () {
+            if (el.parentNode) el.parentNode.removeChild(el);
+          }, 450);
+        };
+
+        // Never trap the visitor behind the loader if the app fails to signal.
+        window.setTimeout(function () {
+          if (window.__nativeBootHide) window.__nativeBootHide();
+        }, 8000);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Static so it paints the moment the parser reaches it. Hidden by
+         default; the head script reveals it only on the login-flow routes. -->
+    <div id="native-boot" role="status" aria-live="polite" aria-label="Loading">
+      <div><span></span><span></span><span></span></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.ShopifyBuy = window.ShopifyBuy || {};
+    </script>
+    <script async src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
+  </body>
+</html>

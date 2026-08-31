@@ -1,0 +1,35 @@
+# wholesale.thenativecoffeecompany.com — the transition site.
+# The wholesale flow is in use; the retail redesign is not launched yet and is
+# held behind a password (see SiteGate). Crawlers only ever reach the password
+# form, but they are told not to ask in the first place, so nothing
+# half-finished can end up in a search result or a cache.
+#
+# The main site remains thenativecoffeecompany.com and is unaffected by this.
+
+User-agent: *
+Allow: /
+
+# Not launched — retail redesign.
+Disallow: /$
+Disallow: /shop
+Disallow: /producers
+Disallow: /podcast
+Disallow: /blog
+Disallow: /contact
+Disallow: /login
+Disallow: /signup
+Disallow: /account
+
+# Internal tools.
+Disallow: /wholesale-admin
+Disallow: /wholesale-row-temp
+Disallow: /profit-calculator
+Disallow: /coupon-orders
+Disallow: /vault-applications
+Disallow: /stock-notify-list
+
+# Readymag export leftovers, served straight out of /public.
+Disallow: /rm-assets/
+Disallow: /main.js
+Disallow: /styles.css
+Disallow: /data.json

@@ -1,0 +1,131 @@
+{
+  "seo": {
+    "title": "Mockup - New Homepage",
+    "description": "Challenging the Ordinary provokes cultural change.",
+    "canonical": "https://readymag.website/u2412057466/6085269",
+    "robots": "noindex,nofollow",
+    "openGraph": {
+      "title": "Mockup - New Homepage | Readymag",
+      "description": "Challenging the Ordinary provokes cultural change.",
+      "image": "https://c-p.rmcdn.net/62c4b2b0cb3822001bb504bc/6085269/Screenshot-b05a3f72-1daf-4674-9f86-7db6f706af73_1024.jpg",
+      "url": "https://readymag.website/6085269/",
+      "type": "website",
+      "siteName": "Mockup - New Homepage"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@readymag"
+    },
+    "analyzedAt": "2026-05-13T10:31:25.629Z",
+    "sourceUrl": "https://readymag.website/u2412057466/6085269/"
+  },
+  "brand": {
+    "name": "NA⊥IVE",
+    "tagline": "Roastery + Showroom",
+    "description": "Exclusive roastery + showroom of Diego Bermúdez. Diego is our co-owner, and a world renowned coffee producer and processor with a relentless pursuit of pushing innovation in coffee.",
+    "locations": [
+      { "city": "POPAYÁN, COLOMBIA", "coord": "2.4443° N, 76.6147° W" },
+      { "city": "DALLAS, U.S.", "coord": "32.7767° N, 96.7970° W" },
+      { "city": "CHIRIQUÍ, PANAMÁ", "coord": "8.3667° N, 82.2901° W" }
+    ]
+  },
+  "products": [
+    {
+      "id": "1",
+      "title": "BASE BLEND",
+      "level": "BASE",
+      "status": "available",
+      "price": 18,
+      "defaultWeight": "250g",
+      "weights": ["250g", "500g", "1kg"],
+      "origin": "Colombia",
+      "process": "Washed",
+      "producer": "Diego Bermúdez",
+      "tastingNotes": ["Chocolate", "Caramel", "Walnut"],
+      "description": "Our everyday drinker. A balanced, approachable blend that delivers consistency in every cup.",
+      "image": null
+    },
+    {
+      "id": "2",
+      "title": "THERMAL SHOCK",
+      "level": "TOP SHELF",
+      "status": "available",
+      "price": 38,
+      "defaultWeight": "250g",
+      "weights": ["250g", "500g"],
+      "origin": "Huila, Colombia",
+      "process": "Thermal Shock Natural",
+      "producer": "Diego Bermúdez",
+      "tastingNotes": ["Mango", "Passionfruit", "Jasmine"],
+      "description": "Innovative processing method that creates unprecedented flavor complexity through controlled temperature variations during fermentation.",
+      "image": null
+    },
+    {
+      "id": "3",
+      "title": "SCIENCE VS CO-FERMENT",
+      "level": "COMPETITION",
+      "status": "available",
+      "price": 65,
+      "defaultWeight": "250g",
+      "weights": ["250g"],
+      "origin": "Chiriquí, Panamá",
+      "process": "Co-Fermentation",
+      "producer": "Wilford Lamastus",
+      "tastingNotes": ["Bergamot", "Lychee", "Black Tea"],
+      "description": "A comparative exploration of traditional fermentation versus our innovative co-fermentation process.",
+      "image": null
+    },
+    {
+      "id": "4",
+      "title": "GEISHA WASHED",
+      "level": "EXOTICS",
+      "status": "available",
+      "price": 95,
+      "defaultWeight": "100g",
+      "weights": ["100g", "250g"],
+      "origin": "Boquete, Panamá",
+      "process": "Washed",
+      "producer": "Hacienda La Esmeralda",
+      "tastingNotes": ["Rose", "Jasmine", "Peach", "Earl Grey"],
+      "description": "The iconic Geisha varietal in its purest expression. Floral, delicate, and endlessly complex.",
+      "image": null
+    },
+    {
+      "id": "5",
+      "title": "PURPLE CATURRA",
+      "level": "HYPER-LIMITED",
+      "status": "available",
+      "price": 180,
+      "defaultWeight": "100g",
+      "weights": ["100g"],
+      "origin": "Cauca, Colombia",
+      "process": "Anaerobic Natural",
+      "producer": "Diego Bermúdez",
+      "tastingNotes": ["Blueberry", "Dark Chocolate", "Red Wine", "Cedar"],
+      "description": "An extraordinary mutation of the Caturra varietal, producing fewer than 200kg annually. Pure rarity.",
+      "image": null
+    },
+    {
+      "id": "6",
+      "title": "TOP SHELF NATURAL",
+      "level": "TOP SHELF",
+      "status": "sold_out",
+      "price": 42,
+      "defaultWeight": "250g",
+      "weights": ["250g", "500g"],
+      "origin": "Nariño, Colombia",
+      "process": "Natural",
+      "producer": "Elias Bayter",
+      "tastingNotes": ["Strawberry", "Honey", "Vanilla"],
+      "description": "A classic natural process executed with perfection. Sweet, fruity, and incredibly balanced.",
+      "image": null
+    }
+  ],
+  "coffeeLevels": [
+    { "num": "01", "label": "BASE", "description": "Our everyday drinker — consistent, approachable, exceptional value." },
+    { "num": "02", "label": "TOP SHELF", "description": "Single origins from our vetted producers. Specialty grade." },
+    { "num": "03", "label": "COMPETITION", "description": "Coffees that place at origin competitions. Rare and remarkable." },
+    { "num": "04", "label": "EXOTICS", "description": "Legendary varietals and origins. The world's great coffees." },
+    { "num": "05", "label": "HYPER-LIMITED", "description": "Sub-200kg lots. Once gone, gone forever." }
+  ]
+}

@@ -1,0 +1,87 @@
+project_id = "emziqfhzysyovohelvht"
+
+[api]
+enabled = true
+port = 6543
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+enabled = true
+port = 6544
+shadow_port = 6545
+major_version = 15
+
+[db.pooler]
+enabled = false
+port = 6432
+pool_mode = "transaction"
+default_pool_size = 20
+max_client_conn = 100
+
+[realtime]
+enabled = true
+ip_version = "ipv6"
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+image_transformation = { enabled = true }
+
+[auth]
+enabled = true
+site_url = "http://localhost:6542"
+additional_redirect_urls = ["https://lovable.app/projects/*"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = false
+
+[functions.get-shopify-products]
+verify_jwt = false
+
+[functions.verify-wholesale-password]
+verify_jwt = false
+
+# Not unprotected: like the other Customer Account functions, this one verifies
+# the customer session itself and answers 401 without one. A Supabase JWT would
+# add nothing here — the anon key ships in the client and proves nothing about
+# who is asking.
+[functions.get-customer-credit]
+verify_jwt = false
+
+[functions.customer-auth-start]
+verify_jwt = false
+
+[functions.customer-auth-callback]
+verify_jwt = false
+
+[functions.customer-account-get]
+verify_jwt = false
+
+[functions.customer-auth-logout]
+verify_jwt = false
+
+# Gated in code by the customer session — returns only that session's orders.
+[functions.customer-orders-get]
+verify_jwt = false
+
+# Gated in code by the admin JWT, same as list-wholesale-customers.
+[functions.audit-wholesale-tags]
+verify_jwt = false
+
+# Gated in code by the customer session (or by explicit consent when anonymous).
+[functions.stock-notify-subscribe]
+verify_jwt = false
+
+# Gated in code by the admin JWT, same as list-wholesale-customers.
+[functions.stock-notify-list]
+verify_jwt = false
+# Anonymous callers get an anonymous cart; a valid customer session attaches the
+# Shopify buyer identity so customer-restricted discounts can be evaluated.
+[functions.shopify-cart]
+verify_jwt = false

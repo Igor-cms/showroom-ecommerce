@@ -1,0 +1,420 @@
+/* ── Navigo (add font files to /public/fonts/) ── */
+@font-face {
+  font-family: 'Navigo';
+  src: url('/fonts/Navigo.woff2') format('woff2'),
+       url('/fonts/Navigo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Navigo';
+  src: url('/fonts/Navigo-Bold.woff2') format('woff2'),
+       url('/fonts/Navigo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Neue Haas Grotesk Black (add font files to /public/fonts/) ── */
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/NeueHaasGrotesk-Black.woff2') format('woff2'),
+       url('/fonts/NeueHaasGrotesk-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Helvetica 53 Extended (add font files to /public/fonts/) ── */
+@font-face {
+  font-family: 'Helvetica 53 Extended';
+  src: url('/fonts/Helvetica53Extended.woff2') format('woff2'),
+       url('/fonts/Helvetica53Extended.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica 53 Extended';
+  src: url('/fonts/Helvetica53Extended-Bold.woff2') format('woff2'),
+       url('/fonts/Helvetica53Extended-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ReadyMag font aliases → Neue Helvetica */
+@font-face {
+  font-family: 'custom_75139';
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'custom_75141';
+  src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'custom_75142';
+  src: url('/fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Custom Helvetica Font Faces */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-BoldOblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Compressed';
+  src: url('/fonts/Helvetica-Compressed.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Rounded';
+  src: url('/fonts/Helvetica-Rounded-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NA LIVE Design System - Coffee Company Brand Tokens */
+
+@layer base {
+  :root {
+    /* Brand Color Palette */
+    --bg-cream: 51 59% 93%;           /* #F8F5E4 - paper cream */
+    --ink: 0 0% 5%;                   /* #0E0E0E */
+    --ink-60: 0 0% 5% / 0.6;          /* rgba(14,14,14,.6) */
+    --line: 42 19% 82%;               /* #D8D4CB */
+    --badge: 42 23% 90%;              /* #E9E3D6 */
+    --accent-olive: 93 14% 48%;       /* #7E8C6A */
+    --accent-sand: 33 22% 74%;        /* #D1BFA9 */
+    
+    /* Wholesale Theme Colors */
+    --wholesale-primary: 204 8% 7%;   /* #131313 - almost black */
+    --wholesale-secondary: 30 9% 41%; /* #756c5c - earthy grey-brown */
+    --wholesale-bg: 50 100% 95%;      /* #fffbe4 - background */
+    --wholesale-accent: 45 69% 73%;   /* #eac784 - accent */
+    
+    /* Semantic Design Tokens */
+    --background: var(--bg-cream);
+    --foreground: var(--ink);
+    --card: var(--bg-cream);
+    --card-foreground: var(--ink);
+    --popover: var(--bg-cream);
+    --popover-foreground: var(--ink);
+    --primary: var(--ink);
+    --primary-foreground: var(--bg-cream);
+    --secondary: var(--badge);
+    --secondary-foreground: var(--ink);
+    --muted: var(--badge);
+    --muted-foreground: var(--ink-60);
+    --accent: var(--accent-olive);
+    --accent-foreground: var(--bg-cream);
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--bg-cream);
+    --border: var(--line);
+    --input: var(--line);
+    --ring: var(--accent-olive);
+    
+    /* Layout & Spacing */
+    --radius: 0.375rem;
+    --radius-xl: 0.75rem;
+    --container-max: 1440px;
+    --sidebar-width: 280px;
+    --cart-width: 320px;
+    
+    /* Typography Scale */
+    --font-headline: "Helvetica", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Helvetica", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "Helvetica Compressed", ui-monospace, "SF Mono", "Monaco", "Cascadia Code", "Roboto Mono", "Courier New", monospace;
+    
+    /* Motion & Timing */
+    --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-reveal: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(var(--ink) / 0.1), 0 1px 2px 0 hsl(var(--ink) / 0.06);
+    --shadow-card-hover: 0 4px 6px -1px hsl(var(--ink) / 0.1), 0 2px 4px -1px hsl(var(--ink) / 0.06);
+    --shadow-drawer: 0 20px 25px -5px hsl(var(--ink) / 0.1), 0 10px 10px -5px hsl(var(--ink) / 0.04);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Single vertical scrollbar owned by the document/viewport (<html>).
+     The body must NOT declare its own overflow: doing so (even overflow-x:
+     hidden, which forces overflow-y to compute to `auto`) turns <body> into a
+     second scroll container and produces a duplicate vertical scrollbar. */
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    min-height: 100vh;
+  }
+
+  /* Global scrollbar theming — Readymag palette: taupe #8E8A80 thumb on a
+     cream #F8F5E4 track (same cream as the newsletter bar / page). Applied
+     site-wide, so mobile gets it too. Only appearance changes; scroll behavior
+     is untouched. Components that intentionally hide or restyle their own
+     scrollbar (e.g. carousels, TheVault dialog) keep doing so via
+     higher-specificity utility classes. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8E8A80 #F8F5E4;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #F8F5E4;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #8E8A80;
+    border-radius: 9999px;
+    /* Transparent border + background-clip keeps a small inset so the thumb
+       reads as a rounded pill rather than a full-width block — the cream track
+       shows through the border, matching the reference image. */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    /* Slightly deeper taupe on hover for affordance. */
+    background-color: #797569;
+  }
+
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+/* Shop active-title push-up — the fixed top bar holds the current section
+   name. On change, the outgoing name slides UP and out (masked by the bar's
+   overflow-hidden clip) while the incoming name rises from below into its
+   place. As a section docks under the bar, its inline title (previewed
+   further down the page) hides on the same frame the bar adopts it, so the
+   handoff reads as one physical replacement — never two titles at rest. */
+@keyframes shopTitlePushIn {
+  from { transform: translateY(100%);  opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+@keyframes shopTitlePushOut {
+  from { transform: translateY(0);     opacity: 1; }
+  to   { transform: translateY(-100%); opacity: 0; }
+}
+.shop-title-enter {
+  animation: shopTitlePushIn 300ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.shop-title-exit {
+  animation: shopTitlePushOut 300ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shop-title-enter { animation: none; }
+  .shop-title-exit  { animation: none; display: none; }
+}
+
+@layer components {
+  /* Typography Utilities */
+  .text-headline {
+    @apply font-headline;
+  }
+  
+  .text-mono {
+    @apply font-mono uppercase tracking-[0.04em];
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground rounded-full px-5 py-2 font-medium transition-all duration-fast hover:shadow-card-hover focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  
+  .btn-ghost {
+    @apply border border-primary bg-transparent text-primary rounded-full px-5 py-2 font-medium transition-all duration-fast hover:bg-primary hover:text-primary-foreground;
+  }
+  
+  /* Chip Component */
+  .chip {
+    @apply bg-badge border border-border text-xs text-mono px-3 py-1.5 rounded-full;
+  }
+  
+  .chip-accent {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  /* Card Components */
+  .card-product {
+    @apply bg-card rounded-xl shadow-card transition-all duration-smooth hover:shadow-card-hover hover:scale-[1.02];
+  }
+  
+  /* Reveal Animation */
+  .reveal {
+    @apply opacity-0 translate-y-2 transition-all duration-reveal;
+  }
+  
+  .reveal.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Nav Link Animation */
+  .nav-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-fast hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  /* Layout Utilities */
+  .container-main {
+    @apply max-w-[var(--container-max)] mx-auto;
+  }
+  
+  .sidebar-fixed {
+    @apply fixed top-0 left-0 w-[var(--sidebar-width)] h-screen border-r border-border bg-background z-10;
+  }
+  
+  /* Shopify Buy Button Custom Styling */
+  .shopify-buy__option-select-wrapper {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  .shopify-buy-frame .shopify-buy__option-select-wrapper {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  .shopify-buy__quantity {
+    height: 28px !important;
+  }
+}
+
+/* Readymag display face used for the producer name (project's own webfont,
+   exported from the Readymag project — family id "custom_75139"). */
+@font-face {
+  font-family: 'custom_75139';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/custom_75139.ttf') format('truetype');
+}
+
+@layer utilities {
+  .font-rm-display {
+    font-family: 'custom_75139', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  .font-grotesk {
+    font-family: 'Neue Haas Grotesk', 'HelveticaNeue', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 900;
+  }
+  .font-extended {
+    font-family: 'Helvetica 53 Extended', Helvetica, Arial, sans-serif;
+    font-stretch: expanded;
+  }
+  .font-navigo {
+    font-family: 'Navigo', sans-serif;
+  }
+  .font-georgia {
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+}
